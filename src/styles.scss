@@ -1,1 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+/* sriracha-regular - latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Sriracha';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./assets/fonts/sriracha-v14-latin-regular.woff2') format('woff2');
+}
+
+*{
+    margin: 0;
+}

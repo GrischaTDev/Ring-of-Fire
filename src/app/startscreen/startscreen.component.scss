@@ -1,0 +1,21 @@
+
+
+.start-screen {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    background-image: url(./../../assets/img/start.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    >h1 {
+        font-family: 'Sriracha';
+        height: 100%;
+        color: white;
+        font-size: 86px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
