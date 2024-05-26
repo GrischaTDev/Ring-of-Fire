@@ -1,4 +1,10 @@
-
+@mixin dFlex($jc: center, $ai: center, $g: 0px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: $jc;
+    align-items: $ai;
+    gap: $g;
+}
 
 .start-screen {
     width: 100vw;
@@ -8,14 +14,31 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    @include dFlex($g: 40px);
 
     >h1 {
         font-family: 'Sriracha';
-        height: 100%;
         color: white;
         font-size: 86px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    }
+
+    >a {
+        text-decoration: none;
+    }
+
+    >.start-button {
+        font-size: 36px;
+        font-family: 'Sriracha';
+        width: 300px;
+        height: 50px;
+        color: white;
+        background-color: orange;
+        border-radius: 20px;
+        @include dFlex();
+
+        &:hover {
+            cursor: pointer;
+            background-color: rgb(187, 134, 36);
+        }
     }
 }
