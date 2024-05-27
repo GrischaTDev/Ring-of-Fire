@@ -1,16 +1,10 @@
-@mixin dFlex($jc: center, $ai: center, $g: 0px) {
-    display: flex;
-    flex-direction: column;
-    justify-content: $jc;
-    align-items: $ai;
-    gap: $g;
-}
+@import './../../mixins.scss';
 
 .start-screen {
     width: 100vw;
     height: 100vh;
     max-width: 100%;
-    background-image: url(./../../assets/img/start.jpg);
+    background-image: url(./../../assets/img/start2.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -29,13 +23,13 @@
         width: 300px;
         height: 50px;
         color: white;
-        background-color: orange;
+        background-color: #ad3921;
         border-radius: 20px;
         @include dFlex();
 
         &:hover {
             cursor: pointer;
-            background-color: rgb(187, 134, 36);
+            background-color: #da5e45 ;
         }
     }
 }

@@ -1,0 +1,19 @@
+@import './../../mixins.scss';
+
+.field {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+    background-image: url(./../../assets/img/board.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card-stack {
+    height: 100%;
+    @include dFlex();
+    >img {
+        height: 300px;
+    }
+}
