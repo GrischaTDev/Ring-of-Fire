@@ -1,12 +1,31 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Game } from '../../assets/game';
 
 @Component({
   selector: 'app-game',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './game.component.html',
   styleUrl: './game.component.scss'
 })
-export class GameComponent {
 
+export class GameComponent {
+  pickCardAnimation = false;
+  game: Game;
+
+  constructor() {
+    this.game = new Game();
+    console.log(this.game);
+  }
+
+
+  newGame() {
+    this.game = new Game();
+    console.log(this.game);
+  }
+
+  takeCard() {
+    this.pickCardAnimation = true;
+  }
 }
