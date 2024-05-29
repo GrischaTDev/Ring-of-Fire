@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Game } from '../../assets/game';
+import { Game } from '../../models/game';
 
 @Component({
   selector: 'app-game',
@@ -18,6 +18,10 @@ export class GameComponent {
     this.game = new Game();
     console.log(this.game);
   }
+
+  // ngOnInit(): void {
+  //   this.newGame();
+  // }
 
 
   newGame() {
