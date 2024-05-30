@@ -5,6 +5,6 @@
         <img (click)="takeCard()" class="top-card" style="right: 25px;" 
             src="./assets/img/cards/cover.webp">
         <img (click)="takeCard()" *ngIf="pickCardAnimation" class="pick-card pickCardAnimation" style="right: 25px;" 
-            src="./assets/img/cards/Hearts_7.png">
+            src="./assets/img/cards/{{ currentCard }}.png">
     </div>
 </div>

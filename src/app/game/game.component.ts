@@ -12,6 +12,7 @@ import { Game } from '../../models/game';
 
 export class GameComponent {
   pickCardAnimation = false;
+  currentCard: string = '';
   game: Game;
 
   constructor() {
@@ -19,17 +20,18 @@ export class GameComponent {
     console.log(this.game);
   }
 
-  // ngOnInit(): void {
-  //   this.newGame();
-  // }
-
-
-  newGame() {
-    this.game = new Game();
-    console.log(this.game);
-  }
-
   takeCard() {
-    this.pickCardAnimation = true;
+    if (!this.pickCardAnimation) {
+      this.currentCard = this.game.stack.pop() ?? '';
+      this.game.playedCards.push(this.currentCard);
+      console.log(this.currentCard);
+      console.log(this.game.playedCards, 'Gespielte Karten');
+      this.pickCardAnimation = true;
+  
+  
+      setTimeout(()=> {
+        this.pickCardAnimation = false;
+      }, 1500)
+    }
   }
 }
