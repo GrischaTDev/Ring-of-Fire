@@ -1,0 +1,18 @@
+@import './../../mixins.scss';
+
+.player {
+    @include dFlex($fd: raw, $jc: flex-start, $g: 20px);
+    width: 300px;
+    padding: 10px 10px;
+    background-color: orange;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+
+    >span {
+        font-size: 45px;
+    }
+
+    >img {
+        height: 80px;
+    }
+}

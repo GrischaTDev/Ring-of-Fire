@@ -9,7 +9,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     @include dFlex();
-
 }
 
 .card-stack {
@@ -55,4 +54,9 @@
 .played-card {
     right: 25px;
     transform: scale(1) translateX(450px) translateY(-450px);
+}
+
+.player-position {
+    position: absolute;
+    right: 0;
 }
