@@ -4,15 +4,19 @@
     @include dFlex($fd: raw, $jc: flex-start, $g: 20px);
     width: 300px;
     padding: 10px 10px;
-    background-color: orange;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+    background-color: rgb(190, 190, 190);
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
 
     >span {
-        font-size: 45px;
+        font-size: 25px;
     }
 
     >img {
-        height: 80px;
+        height: 40px;
     }
+}
+
+.player-active {
+    background-color: orange;
 }
