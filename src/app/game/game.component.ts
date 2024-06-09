@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Game } from '../../models/game';
 import { PlayerComponent } from '../player/player.component';
 import { MatButtonModule } from '@angular/material/button';
@@ -34,12 +34,8 @@ import { GameInfoComponent } from '../game-info/game-info.component';
 export class GameComponent {
   pickCardAnimation = false;
   currentCard: string = '';
-  game: Game;
-
-  constructor(public dialog: MatDialog) {
-    this.game = new Game();
-    console.log(this.game);
-  }
+  game = new Game();
+  public dialog = inject(MatDialog);
 
   takeCard() {
     if (!this.pickCardAnimation) {
