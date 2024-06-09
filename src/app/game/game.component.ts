@@ -11,16 +11,18 @@ import { FormsModule } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { DialogAddPlayerComponent } from '../dialog-add-player/dialog-add-player.component';
 import { GameInfoComponent } from '../game-info/game-info.component';
+import { Firestore, addDoc, collection, collectionData } from '@angular/fire/firestore';
+import { Observable } from 'rxjs';
 
 
 @Component({
   selector: 'app-game',
   standalone: true,
   imports: [
-    CommonModule, 
-    PlayerComponent, 
-    MatButtonModule, 
-    MatIconModule, 
+    CommonModule,
+    PlayerComponent,
+    MatButtonModule,
+    MatIconModule,
     MatDialogModule,
     MatFormFieldModule,
     MatInputModule,
@@ -32,10 +34,26 @@ import { GameInfoComponent } from '../game-info/game-info.component';
 })
 
 export class GameComponent {
+
+  firestore: Firestore = inject(Firestore);
+  game!: Game;
   pickCardAnimation = false;
   currentCard: string = '';
-  game = new Game();
+
   public dialog = inject(MatDialog);
+
+  ngOnInit() {
+    this.newGame();
+    // this.getGamesRef();
+  }
+
+  newGame() {
+    this.game = new Game();
+    // const games = collection(this.firestore, 'games');
+    // addDoc(games, this.game.toJson())
+    // console.log(games);
+  }
+
 
   takeCard() {
     if (!this.pickCardAnimation) {
@@ -46,8 +64,8 @@ export class GameComponent {
 
       console.log(this.currentCard);
       console.log(this.game.playedCards, 'Gespielte Karten');
-  
-      setTimeout(()=> {
+
+      setTimeout(() => {
         this.game.playedCards.push(this.currentCard);
         this.pickCardAnimation = false;
       }, 1000)
@@ -56,7 +74,7 @@ export class GameComponent {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogAddPlayerComponent);
-  
+
     dialogRef.afterClosed().subscribe((name: string) => {
       if (name && name.length > 0) {
         this.game.players.push(name);
